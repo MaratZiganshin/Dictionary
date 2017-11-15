@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\github\dictionary\dictionary\dictionary\main.cpp(56): warning C4018: <: несоответствие типов со знаком и без знака
+  Dictionary.vcxproj -> C:\GitHub\Dictionary\Dictionary\Debug\Dictionary.exe
+  Dictionary.vcxproj -> C:\GitHub\Dictionary\Dictionary\Debug\Dictionary.pdb (Partial PDB)
