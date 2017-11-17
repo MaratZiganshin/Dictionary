@@ -52,10 +52,6 @@ public:
         {
             std::string temp;
             file >> temp;
-            char last = temp[temp.length() - 1];
-            if (!(last <= 'z' && last >= 'a' || last <= 'Z' && last >= 'A'))
-                temp = temp.substr(0, temp.length() - 1);
-            cout << temp << endl;
             insert(temp);
         }    
     }
