@@ -4,6 +4,7 @@
 #include <sstream>
 #include <cstdlib>
 #include <cctype>
+#include <set>
 
 #include "dictionary.h"
 
@@ -48,6 +49,7 @@ void checkSpelling(ifstream& in, Dictionary& dict)
             char last = word[word.length() - 1];
             word = stripPunct(word);
             lower(word);
+            set<string> suggestions;
             if (!dict.search(word))
             {
                 cout << "line " << line_number << ": " << word + " not found " << endl;
@@ -60,16 +62,34 @@ void checkSpelling(ifstream& in, Dictionary& dict)
                         string newWord = word;
                         newWord[j] = letter;
                         if (dict.search(newWord))
-                            cout << "\t\t" << newWord << endl;
+                            suggestions.insert(newWord);
                     }
                     for (int j = 0; j <= word.length(); j++)
                     {
                         string newWord = word;
                         newWord = newWord.insert(j, 1, letter);
-                        if (dict.search(newWord) && newWord[j] != newWord[j + 1])
-                            cout << "\t\t" << newWord << endl;
+                        if (dict.search(newWord))
+                            suggestions.insert(newWord);
                     }
                 }
+                for (int i = 0; i < word.length(); i++)
+                {
+                    string newWord = word;
+                    newWord.erase(i, 1);
+                    if (dict.search(newWord))
+                        suggestions.insert(newWord);
+                }
+                for (int i = 1; i < word.length(); i++)
+                {
+                    string newWord = word;
+                    char letter = newWord[i];
+                    newWord[i] = newWord[i - 1];
+                    newWord[i - 1] = letter;
+                    if (dict.search(newWord))
+                        suggestions.insert(newWord);
+                }
+                for (string str : suggestions)
+                    cout << "\t\t" << str << endl;
             }
 		}
 	}
