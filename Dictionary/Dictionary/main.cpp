@@ -20,13 +20,9 @@ int main(int argc, char* argv[])
 	Dictionary d("C:\\GitHub\\Dictionary\\Dictionary\\Dictionary\\wordlist.txt");
     int k = 1;
     ifstream inf("C:\\GitHub\\Dictionary\\Dictionary\\Dictionary\\test.txt");
-	//checkSpelling(inf, d);
+	checkSpelling(inf, d);
 	//inf.close();
-    string word = "spell";
-    string newWord = word;
-    
-    newWord.insert(4,5, letter);
-    cout << newWord;
+
 
     system("pause");
 	return EXIT_SUCCESS;
@@ -63,14 +59,14 @@ void checkSpelling(ifstream& in, Dictionary& dict)
                     {
                         string newWord = word;
                         newWord[j] = letter;
-                        //if (dict.search(newWord))
+                        if (dict.search(newWord))
                             cout << "\t\t" << newWord << endl;
                     }
                     for (int j = 0; j <= word.length(); j++)
                     {
                         string newWord = word;
-                        newWord = newWord.insert(j, &(char)letter);
-                        //if (dict.search(newWord))
+                        newWord = newWord.insert(j, 1, letter);
+                        if (dict.search(newWord) && newWord[j] != newWord[j + 1])
                             cout << "\t\t" << newWord << endl;
                     }
                 }
