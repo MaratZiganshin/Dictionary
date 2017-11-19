@@ -18,15 +18,31 @@ void checkSpelling(ifstream& in, Dictionary& dict);
 int main(int argc, char* argv[]) 
 {
 
-	Dictionary d("C:\\GitHub\\Dictionary\\Dictionary\\Dictionary\\wordlist.txt");
-    int k = 1;
-    ifstream inf("C:\\GitHub\\Dictionary\\Dictionary\\Dictionary\\test.txt");
-	checkSpelling(inf, d);
-	//inf.close();
+    // Output usage message if improper command line args were given.
+    if (argc != 3)
+    {
+        cerr << "Usage: " << argv[0] << " wordlist_filename input_file\n";
+        return EXIT_FAILURE;
+    }
 
+    ifstream inf(argv[2]);
+    if (!inf)
+    {
+        cerr << "Could not open " << argv[2] << "\n";
+        return EXIT_FAILURE;
+    }
+
+    // Read dictionary, but let user know what we are working on.
+    cout << "Loading dictionary, this may take awhile...\n";
+
+    Dictionary d(argv[1]);
+
+    checkSpelling(inf, d);
+
+    inf.close();
 
     system("pause");
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }
 
 void checkSpelling(ifstream& in, Dictionary& dict) 

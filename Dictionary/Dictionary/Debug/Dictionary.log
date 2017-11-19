@@ -1,8 +1,8 @@
 ﻿  main.cpp
-c:\github\dictionary\dictionary\dictionary\main.cpp(60): warning C4018: <: несоответствие типов со знаком и без знака
-c:\github\dictionary\dictionary\dictionary\main.cpp(67): warning C4018: <=: несоответствие типов со знаком и без знака
-c:\github\dictionary\dictionary\dictionary\main.cpp(75): warning C4018: <: несоответствие типов со знаком и без знака
-c:\github\dictionary\dictionary\dictionary\main.cpp(82): warning C4018: <: несоответствие типов со знаком и без знака
-c:\github\dictionary\dictionary\dictionary\main.cpp(101): warning C4018: <: несоответствие типов со знаком и без знака
+c:\github\dictionary\dictionary\dictionary\main.cpp(76): warning C4018: <: несоответствие типов со знаком и без знака
+c:\github\dictionary\dictionary\dictionary\main.cpp(83): warning C4018: <=: несоответствие типов со знаком и без знака
+c:\github\dictionary\dictionary\dictionary\main.cpp(91): warning C4018: <: несоответствие типов со знаком и без знака
+c:\github\dictionary\dictionary\dictionary\main.cpp(98): warning C4018: <: несоответствие типов со знаком и без знака
+c:\github\dictionary\dictionary\dictionary\main.cpp(117): warning C4018: <: несоответствие типов со знаком и без знака
   Dictionary.vcxproj -> C:\GitHub\Dictionary\Dictionary\Debug\Dictionary.exe
   Dictionary.vcxproj -> C:\GitHub\Dictionary\Dictionary\Debug\Dictionary.pdb (Partial PDB)
